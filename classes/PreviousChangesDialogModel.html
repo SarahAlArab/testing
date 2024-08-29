@@ -1,0 +1,884 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>wfps-web-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">wfps-web-app documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >PreviousChangesDialogModel</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/home/households/change-logs/change-logs.config.ts</code>
+        </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#changeOn" >changeOn</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#confirmationMessage" >confirmationMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#data" >data</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#detailsTitle" >detailsTitle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#fields" >fields</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#houseHoldId" >houseHoldId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#icon" >icon</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isDisabled" >isDisabled</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#lookups" >lookups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#modalTitle" >modalTitle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#objectId" >objectId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#revisionId" >revisionId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(data: T, houseHoldId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, revisionId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, objectId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, changeOn: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, fields: <a href="../interfaces/FieldConfigModel.html" target="_self">FieldConfigModel[]</a>, lookups: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, detailsTitle: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, isDisabled: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, modalTitle: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, confirmationMessage: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, icon: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:56</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>data</td>
+                                                  
+                                                        <td>
+                                                                    <code>T</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>houseHoldId</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>revisionId</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>objectId</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>changeOn</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fields</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/FieldConfigModel.html" target="_self" >FieldConfigModel[]</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>lookups</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>detailsTitle</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>isDisabled</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalTitle</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>confirmationMessage</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>icon</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeOn"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>changeOn</b></span>
+                        <a href="#changeOn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="confirmationMessage"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>confirmationMessage</b></span>
+                        <a href="#confirmationMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="data"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>data</b></span>
+                        <a href="#data"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>T</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="detailsTitle"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>detailsTitle</b></span>
+                        <a href="#detailsTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fields"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>fields</b></span>
+                        <a href="#fields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/FieldConfigModel.html" target="_self" >FieldConfigModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="houseHoldId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>houseHoldId</b></span>
+                        <a href="#houseHoldId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="icon"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>icon</b></span>
+                        <a href="#icon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDisabled"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isDisabled</b></span>
+                        <a href="#isDisabled"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lookups"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>lookups</b></span>
+                        <a href="#lookups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modalTitle"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>modalTitle</b></span>
+                        <a href="#modalTitle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="objectId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>objectId</b></span>
+                        <a href="#objectId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="revisionId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>revisionId</b></span>
+                        <a href="#revisionId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/home/households/change-logs/change-logs.config.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { FieldConfigModel, FieldType } from &quot;src/app/shared/models/fields-config.model&quot;;
+import { DataTableColumnDefinition } from &#x27;src/app/shared/models/data-table-column-definition.model&#x27;;
+import { DATA_TABLE_COLUMN_FORMAT } from &#x27;src/app/shared/enums/data-table-column-format&#x27;;
+import { LookupsEnum } from &#x27;src/app/shared/models/lookups.enum&#x27;;
+
+
+export const FilterbyOptions: FieldConfigModel[] &#x3D; [
+       { prop: &#x27;nameChange&#x27;, type: FieldType.checkbox, defaultValue: false, isRequired: false, validators: null, label: &#x27;home.households.name_change&#x27;, size: &quot;30%&quot; },
+       { prop: &#x27;mobileNumberChange&#x27;, type: FieldType.checkbox, defaultValue: false, isRequired: false, validators: null, label: &#x27;home.households.phone_change&#x27;, size: &quot;30%&quot; },
+       { prop: &#x27;idNumberChange&#x27;, type: FieldType.checkbox, defaultValue: false, isRequired: false, validators: null, label: &#x27;home.households.app_id_change&#x27;, size: &quot;30%&quot; },
+       { prop: &#x27;familyNbrChange&#x27;, type: FieldType.checkbox, defaultValue: false, isRequired: false, validators: null, label: &#x27;home.households.member_count_change&#x27;, size: &quot;30%&quot; },
+       { prop: &#x27;townChange&#x27;, type: FieldType.checkbox, defaultValue: false, isRequired: false, validators: null, label: &#x27;home.households.address_change&#x27;, size: &quot;30%&quot; },
+       { prop: &#x27;headNameChanges&#x27;, type: FieldType.checkbox, defaultValue: false, isRequired: false, validators: null, label: &#x27;home.households.change_in_house_hold_name&#x27;, size: &quot;30%&quot; },
+       { prop: &#x27;adminChanges&#x27;, type: FieldType.checkbox, defaultValue: false, isRequired: false, validators: null, label: &#x27;home.households.exclude_change_by_owner&#x27;, size: &quot;100%&quot; },
+       { prop: &#x27;applicationStatus&#x27;, type: FieldType.dropdown, defaultValue: null, isArray: false, isRequired: false, validators: null, label: &#x27;essn_module.essn_status&#x27;, size: &#x27;30%&#x27;, lookupKey: LookupsEnum.AID_CARD_APPLICATION_STATUS, withFilter: false, withClearButton: true },
+       { prop: &#x27;caseNumber&#x27;, type: FieldType.string, size: &#x27;30%&#x27;, defaultValue: null, label: &#x27;home.households.case_number&#x27; , isDisabled:false},
+       { prop: &#x27;name&#x27;, type: FieldType.string, size: &#x27;30%&#x27;, defaultValue: null, label: &#x27;home.households.headOfFamily_name&#x27;, isDisabled:false },
+       { prop: &#x27;mobileNumber&#x27;, type: FieldType.string, size: &#x27;30%&#x27;, defaultValue: null, label: &#x27;home.households.phone_number&#x27; , isDisabled:false},
+       { prop: &#x27;supervisorUserId&#x27;, type: FieldType.dropdown, defaultValue: null, isArray: false, isRequired: false, validators: null, label: &#x27;home.supervisors.name&#x27;, size: &#x27;30%&#x27;, lookupKey: LookupsEnum.Superviors, withFilter: true, withClearButton: true },
+       { prop: &#x27;surveyorUserId&#x27;, type: FieldType.dropdown, defaultValue: null, isArray: false, isRequired: false, validators: null, label: &#x27;home.surveyers.name&#x27;, size: &#x27;30%&#x27;, lookupKey: LookupsEnum.Surveyor, withFilter: true, withClearButton: true },
+      ]
+
+export const AuditedHistoryColumnDef: DataTableColumnDefinition[] &#x3D; [
+  new DataTableColumnDefinition(&#x27;applicationNumber&#x27;, &#x27;home.households.case_number&#x27;, &#x27;10%&#x27;),
+  new DataTableColumnDefinition(&#x27;name&#x27;, &#x27;home.households.headOfFamily_name&#x27;, &#x27;30%&#x27;),
+  new DataTableColumnDefinition(&#x27;mobileNumber&#x27;, &#x27;home.households.phone_number&#x27;, &#x27;10%&#x27;),
+  new DataTableColumnDefinition(&#x27;surveyorUser.name&#x27;, &#x27;home.households.surveyor&#x27;, &#x27;20%&#x27;, DATA_TABLE_COLUMN_FORMAT.StringWithIcon, undefined, &quot;assets/icons/surveyors_disabled.svg&quot;, false),
+  new DataTableColumnDefinition(&#x27;visitDate&#x27;, &#x27;home.households.visit_date&#x27;, &#x27;12%&#x27;, DATA_TABLE_COLUMN_FORMAT.StringWithIcon, undefined, &quot;assets/icons/date.svg&quot;, false),
+  new DataTableColumnDefinition(&#x27;applicationStatus&#x27;, &#x27;home.households.status&#x27;, &#x27;10%&#x27;, undefined, [&#x27;highlighted highlightedBigContent&#x27;, &#x27;&#x27;]),
+  new DataTableColumnDefinition(&#x27;onHold&#x27;, &#x27;home.households.on_hold&#x27;, &#x27;12%&#x27;),
+  new DataTableColumnDefinition(&#x27;previousApplicationStatus&#x27;, &#x27;home.households.previous_status&#x27;, &#x27;10%&#x27;, undefined, [&#x27;highlighted highlightedBigContent&#x27;, &#x27;&#x27;]),
+  new DataTableColumnDefinition(&#x27;actions&#x27;, &#x27;&#x27;, &#x27;8%&#x27;, DATA_TABLE_COLUMN_FORMAT.Actions, undefined, undefined, undefined, undefined, undefined, undefined, undefined, [
+    // new DataTableColumnDefinition(&#x27;audit&#x27;, &#x27;home.households.daem_report&#x27;, &#x27;8%&#x27;, DATA_TABLE_COLUMN_FORMAT.Action, undefined, &quot;var:assets/icons/person.svg&quot;, false, undefined, undefined, &#x27;isAuditDisabled&#x27;, &#x27;auditToolTip&#x27;),
+    // new DataTableColumnDefinition(&#x27;essn&#x27;, &#x27;home.households.essn_report&#x27;, &#x27;8%&#x27;, DATA_TABLE_COLUMN_FORMAT.Action, undefined, &quot;var:assets/icons/house.svg&quot;, false, undefined, undefined, &#x27;isEssnDisabled&#x27;, &#x27;essnToolTip&#x27;),
+    new DataTableColumnDefinition(&#x27;changeLogs&#x27;,&#x27;home.households.previous_changes&#x27;,&#x27;10%&#x27;,DATA_TABLE_COLUMN_FORMAT.Action,undefined,&#x27;var:assets/icons/payments.svg&#x27;,false,undefined,undefined,false),
+  ]),
+];
+
+export const AuditedPreviousChangesColumnDef: DataTableColumnDefinition[] &#x3D; [
+  new DataTableColumnDefinition(&#x27;changeOn&#x27;, &#x27;home.households.change_on&#x27;, &#x27;10%&#x27;),
+  new DataTableColumnDefinition(&#x27;fullName&#x27;, &#x27;home.households.change_description&#x27;, &#x27;30%&#x27;),
+  new DataTableColumnDefinition(&#x27;changeType&#x27;, &#x27;home.households.change_type&#x27;, &#x27;10%&#x27;),
+  new DataTableColumnDefinition(&#x27;changeTime&#x27;, &#x27;home.households.date&#x27;, &#x27;20%&#x27;, DATA_TABLE_COLUMN_FORMAT.StringWithIcon, undefined, &quot;assets/icons/date.svg&quot;, false),
+  new DataTableColumnDefinition(&#x27;changedBy&#x27;, &#x27;home.households.user&#x27;, &#x27;20%&#x27;, undefined, [&#x27;highlighted highlightedBigContent&#x27;, &#x27;&#x27;]),
+  new DataTableColumnDefinition(&#x27;actions&#x27;, &#x27;&#x27;, &#x27;20%&#x27;, DATA_TABLE_COLUMN_FORMAT.Actions, undefined, undefined, undefined, undefined, undefined, undefined, undefined, [
+    new DataTableColumnDefinition(&#x27;details&#x27;,&#x27;home.households.daem_report&#x27;,&#x27;8%&#x27;,DATA_TABLE_COLUMN_FORMAT.Action,undefined,&#x27;var:assets/icons/person.svg&#x27;,false,undefined,undefined,&#x27;isAuditDisabled&#x27;,&#x27;auditToolTip&#x27;)
+]),
+];
+
+export const AuditedPreviousDetailsChangesColumnDef: DataTableColumnDefinition[] &#x3D; [
+  new DataTableColumnDefinition(&#x27;field&#x27;, &#x27;home.households.checked_column&#x27;, &#x27;20%&#x27;),
+  new DataTableColumnDefinition(&#x27;currentValue&#x27;, &#x27;home.households.column_current_value&#x27;, &#x27;40%&#x27;),
+  new DataTableColumnDefinition(&#x27;previousValue&#x27;, &#x27;home.households.column_old_value&#x27;, &#x27;40%&#x27;),
+];
+
+export class PreviousChangesDialogModel&lt;T, K&gt; {
+  constructor(
+      public data: T,
+      public houseHoldId: string,
+      public revisionId:string,
+      public objectId:string,
+      public changeOn:string,
+      public fields: FieldConfigModel[],
+      public lookups: any,
+      public detailsTitle: string,
+      public isDisabled: boolean &#x3D; false,
+      public modalTitle: string,
+      public confirmationMessage: string,
+      public icon: string,
+  ) { }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'PreviousChangesDialogModel.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

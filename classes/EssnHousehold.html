@@ -1,0 +1,2417 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>wfps-web-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">wfps-web-app documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >EssnHousehold</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/home/households/assigned-households/essn/essn.model.ts</code>
+        </p>
+
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#accommodationArea" >accommodationArea</a>
+                            </li>
+                            <li>
+                                <a href="#accommodationFlooring" >accommodationFlooring</a>
+                            </li>
+                            <li>
+                                <a href="#accommodationProperty" >accommodationProperty</a>
+                            </li>
+                            <li>
+                                <a href="#accommodationType" >accommodationType</a>
+                            </li>
+                            <li>
+                                <a href="#apartment" >apartment</a>
+                            </li>
+                            <li>
+                                <a href="#bathroomsNumber" >bathroomsNumber</a>
+                            </li>
+                            <li>
+                                <a href="#bedroomsNumber" >bedroomsNumber</a>
+                            </li>
+                            <li>
+                                <a href="#building" >building</a>
+                            </li>
+                            <li>
+                                <a href="#canBeCalledForFollowup" >canBeCalledForFollowup</a>
+                            </li>
+                            <li>
+                                <a href="#canBeReachedThroughAContact" >canBeReachedThroughAContact</a>
+                            </li>
+                            <li>
+                                <a href="#comment" >comment</a>
+                            </li>
+                            <li>
+                                <a href="#conflictInArea" >conflictInArea</a>
+                            </li>
+                            <li>
+                                <a href="#contactMobileNumber" >contactMobileNumber</a>
+                            </li>
+                            <li>
+                                <a href="#contactType" >contactType</a>
+                            </li>
+                            <li>
+                                <a href="#distanceToClosestMarket" >distanceToClosestMarket</a>
+                            </li>
+                            <li>
+                                <a href="#essnHouseholdFacilities" >essnHouseholdFacilities</a>
+                            </li>
+                            <li>
+                                <a href="#essnPerson" >essnPerson</a>
+                            </li>
+                            <li>
+                                <a href="#essnVehicles" >essnVehicles</a>
+                            </li>
+                            <li>
+                                <a href="#familiesNumber" >familiesNumber</a>
+                            </li>
+                            <li>
+                                <a href="#familyMembersNumber" >familyMembersNumber</a>
+                            </li>
+                            <li>
+                                <a href="#familyRelation" >familyRelation</a>
+                            </li>
+                            <li>
+                                <a href="#floor" >floor</a>
+                            </li>
+                            <li>
+                                <a href="#hasBankAccount" >hasBankAccount</a>
+                            </li>
+                            <li>
+                                <a href="#hasLandline" >hasLandline</a>
+                            </li>
+                            <li>
+                                <a href="#hasMobile" >hasMobile</a>
+                            </li>
+                            <li>
+                                <a href="#hasMoreThanOneFamily" >hasMoreThanOneFamily</a>
+                            </li>
+                            <li>
+                                <a href="#hasRealEstate" >hasRealEstate</a>
+                            </li>
+                            <li>
+                                <a href="#hasVehicle" >hasVehicle</a>
+                            </li>
+                            <li>
+                                <a href="#householdIndividualsNumber" >householdIndividualsNumber</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#id" >id</a>
+                            </li>
+                            <li>
+                                <a href="#incomeType" >incomeType</a>
+                            </li>
+                            <li>
+                                <a href="#isRegisteredToLifeProgram" >isRegisteredToLifeProgram</a>
+                            </li>
+                            <li>
+                                <a href="#kadaa" >kadaa</a>
+                            </li>
+                            <li>
+                                <a href="#lackOfHealthServices" >lackOfHealthServices</a>
+                            </li>
+                            <li>
+                                <a href="#lackOfHealthServicesReason" >lackOfHealthServicesReason</a>
+                            </li>
+                            <li>
+                                <a href="#landlineNumber" >landlineNumber</a>
+                            </li>
+                            <li>
+                                <a href="#latitude" >latitude</a>
+                            </li>
+                            <li>
+                                <a href="#lifeProgramApplicationNumber" >lifeProgramApplicationNumber</a>
+                            </li>
+                            <li>
+                                <a href="#loanSource" >loanSource</a>
+                            </li>
+                            <li>
+                                <a href="#locality" >locality</a>
+                            </li>
+                            <li>
+                                <a href="#longitude" >longitude</a>
+                            </li>
+                            <li>
+                                <a href="#mobileNumber" >mobileNumber</a>
+                            </li>
+                            <li>
+                                <a href="#mouhafaza" >mouhafaza</a>
+                            </li>
+                            <li>
+                                <a href="#nameOfMobileNumberHolder" >nameOfMobileNumberHolder</a>
+                            </li>
+                            <li>
+                                <a href="#nearestLocation" >nearestLocation</a>
+                            </li>
+                            <li>
+                                <a href="#otherAccommodationType" >otherAccommodationType</a>
+                            </li>
+                            <li>
+                                <a href="#otherContactType" >otherContactType</a>
+                            </li>
+                            <li>
+                                <a href="#otherIncomeType" >otherIncomeType</a>
+                            </li>
+                            <li>
+                                <a href="#otherLoanSource" >otherLoanSource</a>
+                            </li>
+                            <li>
+                                <a href="#realEstateDetails" >realEstateDetails</a>
+                            </li>
+                            <li>
+                                <a href="#receivedHelpFromCountry" >receivedHelpFromCountry</a>
+                            </li>
+                            <li>
+                                <a href="#receivedHelpFromCountryDetails" >receivedHelpFromCountryDetails</a>
+                            </li>
+                            <li>
+                                <a href="#receivedHelpFromNGO" >receivedHelpFromNGO</a>
+                            </li>
+                            <li>
+                                <a href="#receivedHelpFromNGODetails" >receivedHelpFromNGODetails</a>
+                            </li>
+                            <li>
+                                <a href="#receivedMoneyFromForeignTransfer" >receivedMoneyFromForeignTransfer</a>
+                            </li>
+                            <li>
+                                <a href="#receivedMoneyFromLocalTransfer" >receivedMoneyFromLocalTransfer</a>
+                            </li>
+                            <li>
+                                <a href="#respondantFullName" >respondantFullName</a>
+                            </li>
+                            <li>
+                                <a href="#roadType" >roadType</a>
+                            </li>
+                            <li>
+                                <a href="#roomsNumber" >roomsNumber</a>
+                            </li>
+                            <li>
+                                <a href="#street" >street</a>
+                            </li>
+                            <li>
+                                <a href="#toiletType" >toiletType</a>
+                            </li>
+                            <li>
+                                <a href="#town" >town</a>
+                            </li>
+                            <li>
+                                <a href="#wasteManagementType" >wasteManagementType</a>
+                            </li>
+                            <li>
+                                <a href="#waterSource" >waterSource</a>
+                            </li>
+                            <li>
+                                <a href="#waterSourceConsistency" >waterSourceConsistency</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="accommodationArea"></a>
+                    <span class="name">
+                        <span ><b>accommodationArea</b></span>
+                        <a href="#accommodationArea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="accommodationFlooring"></a>
+                    <span class="name">
+                        <span ><b>accommodationFlooring</b></span>
+                        <a href="#accommodationFlooring"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="accommodationProperty"></a>
+                    <span class="name">
+                        <span ><b>accommodationProperty</b></span>
+                        <a href="#accommodationProperty"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="accommodationType"></a>
+                    <span class="name">
+                        <span ><b>accommodationType</b></span>
+                        <a href="#accommodationType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apartment"></a>
+                    <span class="name">
+                        <span ><b>apartment</b></span>
+                        <a href="#apartment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:68</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bathroomsNumber"></a>
+                    <span class="name">
+                        <span ><b>bathroomsNumber</b></span>
+                        <a href="#bathroomsNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="bedroomsNumber"></a>
+                    <span class="name">
+                        <span ><b>bedroomsNumber</b></span>
+                        <a href="#bedroomsNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="building"></a>
+                    <span class="name">
+                        <span ><b>building</b></span>
+                        <a href="#building"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="canBeCalledForFollowup"></a>
+                    <span class="name">
+                        <span ><b>canBeCalledForFollowup</b></span>
+                        <a href="#canBeCalledForFollowup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:102</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="canBeReachedThroughAContact"></a>
+                    <span class="name">
+                        <span ><b>canBeReachedThroughAContact</b></span>
+                        <a href="#canBeReachedThroughAContact"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="comment"></a>
+                    <span class="name">
+                        <span ><b>comment</b></span>
+                        <a href="#comment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:106</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="conflictInArea"></a>
+                    <span class="name">
+                        <span ><b>conflictInArea</b></span>
+                        <a href="#conflictInArea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contactMobileNumber"></a>
+                    <span class="name">
+                        <span ><b>contactMobileNumber</b></span>
+                        <a href="#contactMobileNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contactType"></a>
+                    <span class="name">
+                        <span ><b>contactType</b></span>
+                        <a href="#contactType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="distanceToClosestMarket"></a>
+                    <span class="name">
+                        <span ><b>distanceToClosestMarket</b></span>
+                        <a href="#distanceToClosestMarket"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="essnHouseholdFacilities"></a>
+                    <span class="name">
+                        <span ><b>essnHouseholdFacilities</b></span>
+                        <a href="#essnHouseholdFacilities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="essnPerson"></a>
+                    <span class="name">
+                        <span ><b>essnPerson</b></span>
+                        <a href="#essnPerson"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/BeEssnPersonModel.html" target="_self" >Array&lt;BeEssnPersonModel&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="essnVehicles"></a>
+                    <span class="name">
+                        <span ><b>essnVehicles</b></span>
+                        <a href="#essnVehicles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="familiesNumber"></a>
+                    <span class="name">
+                        <span ><b>familiesNumber</b></span>
+                        <a href="#familiesNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="familyMembersNumber"></a>
+                    <span class="name">
+                        <span ><b>familyMembersNumber</b></span>
+                        <a href="#familyMembersNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="familyRelation"></a>
+                    <span class="name">
+                        <span ><b>familyRelation</b></span>
+                        <a href="#familyRelation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="floor"></a>
+                    <span class="name">
+                        <span ><b>floor</b></span>
+                        <a href="#floor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasBankAccount"></a>
+                    <span class="name">
+                        <span ><b>hasBankAccount</b></span>
+                        <a href="#hasBankAccount"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasLandline"></a>
+                    <span class="name">
+                        <span ><b>hasLandline</b></span>
+                        <a href="#hasLandline"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasMobile"></a>
+                    <span class="name">
+                        <span ><b>hasMobile</b></span>
+                        <a href="#hasMobile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasMoreThanOneFamily"></a>
+                    <span class="name">
+                        <span ><b>hasMoreThanOneFamily</b></span>
+                        <a href="#hasMoreThanOneFamily"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasRealEstate"></a>
+                    <span class="name">
+                        <span ><b>hasRealEstate</b></span>
+                        <a href="#hasRealEstate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasVehicle"></a>
+                    <span class="name">
+                        <span ><b>hasVehicle</b></span>
+                        <a href="#hasVehicle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:104</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="householdIndividualsNumber"></a>
+                    <span class="name">
+                        <span ><b>householdIndividualsNumber</b></span>
+                        <a href="#householdIndividualsNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>id</b></span>
+                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="incomeType"></a>
+                    <span class="name">
+                        <span ><b>incomeType</b></span>
+                        <a href="#incomeType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isRegisteredToLifeProgram"></a>
+                    <span class="name">
+                        <span ><b>isRegisteredToLifeProgram</b></span>
+                        <a href="#isRegisteredToLifeProgram"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="kadaa"></a>
+                    <span class="name">
+                        <span ><b>kadaa</b></span>
+                        <a href="#kadaa"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lackOfHealthServices"></a>
+                    <span class="name">
+                        <span ><b>lackOfHealthServices</b></span>
+                        <a href="#lackOfHealthServices"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lackOfHealthServicesReason"></a>
+                    <span class="name">
+                        <span ><b>lackOfHealthServicesReason</b></span>
+                        <a href="#lackOfHealthServicesReason"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="landlineNumber"></a>
+                    <span class="name">
+                        <span ><b>landlineNumber</b></span>
+                        <a href="#landlineNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="96" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="latitude"></a>
+                    <span class="name">
+                        <span ><b>latitude</b></span>
+                        <a href="#latitude"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lifeProgramApplicationNumber"></a>
+                    <span class="name">
+                        <span ><b>lifeProgramApplicationNumber</b></span>
+                        <a href="#lifeProgramApplicationNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loanSource"></a>
+                    <span class="name">
+                        <span ><b>loanSource</b></span>
+                        <a href="#loanSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="locality"></a>
+                    <span class="name">
+                        <span ><b>locality</b></span>
+                        <a href="#locality"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="longitude"></a>
+                    <span class="name">
+                        <span ><b>longitude</b></span>
+                        <a href="#longitude"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mobileNumber"></a>
+                    <span class="name">
+                        <span ><b>mobileNumber</b></span>
+                        <a href="#mobileNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mouhafaza"></a>
+                    <span class="name">
+                        <span ><b>mouhafaza</b></span>
+                        <a href="#mouhafaza"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nameOfMobileNumberHolder"></a>
+                    <span class="name">
+                        <span ><b>nameOfMobileNumberHolder</b></span>
+                        <a href="#nameOfMobileNumberHolder"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:101</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nearestLocation"></a>
+                    <span class="name">
+                        <span ><b>nearestLocation</b></span>
+                        <a href="#nearestLocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:70</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="otherAccommodationType"></a>
+                    <span class="name">
+                        <span ><b>otherAccommodationType</b></span>
+                        <a href="#otherAccommodationType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="otherContactType"></a>
+                    <span class="name">
+                        <span ><b>otherContactType</b></span>
+                        <a href="#otherContactType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="otherIncomeType"></a>
+                    <span class="name">
+                        <span ><b>otherIncomeType</b></span>
+                        <a href="#otherIncomeType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="otherLoanSource"></a>
+                    <span class="name">
+                        <span ><b>otherLoanSource</b></span>
+                        <a href="#otherLoanSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="realEstateDetails"></a>
+                    <span class="name">
+                        <span ><b>realEstateDetails</b></span>
+                        <a href="#realEstateDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="receivedHelpFromCountry"></a>
+                    <span class="name">
+                        <span ><b>receivedHelpFromCountry</b></span>
+                        <a href="#receivedHelpFromCountry"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="receivedHelpFromCountryDetails"></a>
+                    <span class="name">
+                        <span ><b>receivedHelpFromCountryDetails</b></span>
+                        <a href="#receivedHelpFromCountryDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="receivedHelpFromNGO"></a>
+                    <span class="name">
+                        <span ><b>receivedHelpFromNGO</b></span>
+                        <a href="#receivedHelpFromNGO"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:89</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="receivedHelpFromNGODetails"></a>
+                    <span class="name">
+                        <span ><b>receivedHelpFromNGODetails</b></span>
+                        <a href="#receivedHelpFromNGODetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="receivedMoneyFromForeignTransfer"></a>
+                    <span class="name">
+                        <span ><b>receivedMoneyFromForeignTransfer</b></span>
+                        <a href="#receivedMoneyFromForeignTransfer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="receivedMoneyFromLocalTransfer"></a>
+                    <span class="name">
+                        <span ><b>receivedMoneyFromLocalTransfer</b></span>
+                        <a href="#receivedMoneyFromLocalTransfer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="respondantFullName"></a>
+                    <span class="name">
+                        <span ><b>respondantFullName</b></span>
+                        <a href="#respondantFullName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="roadType"></a>
+                    <span class="name">
+                        <span ><b>roadType</b></span>
+                        <a href="#roadType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:64</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="roomsNumber"></a>
+                    <span class="name">
+                        <span ><b>roomsNumber</b></span>
+                        <a href="#roomsNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="street"></a>
+                    <span class="name">
+                        <span ><b>street</b></span>
+                        <a href="#street"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toiletType"></a>
+                    <span class="name">
+                        <span ><b>toiletType</b></span>
+                        <a href="#toiletType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="town"></a>
+                    <span class="name">
+                        <span ><b>town</b></span>
+                        <a href="#town"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="wasteManagementType"></a>
+                    <span class="name">
+                        <span ><b>wasteManagementType</b></span>
+                        <a href="#wasteManagementType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="waterSource"></a>
+                    <span class="name">
+                        <span ><b>waterSource</b></span>
+                        <a href="#waterSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="waterSourceConsistency"></a>
+                    <span class="name">
+                        <span ><b>waterSourceConsistency</b></span>
+                        <a href="#waterSourceConsistency"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DropdownOptionModel.html" target="_self" >DropdownOptionModel</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/home/households/assigned-households/essn/essn.model.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DropdownOptionModel } from &quot;src/app/shared/models/dropdown-option.model&quot;;
+
+
+export class BeEssnPersonModel {
+
+  constructor(
+      public person: BeEssnOldPersonModel, // Old person data
+      public hasSkillOrTalent: boolean,
+      public skillTalentType: DropdownOptionModel,
+      public otherSkillOrTalent: string,
+      public requiresAssistanceToStartBusiness: boolean,
+      public hasWorkedInPastSevenDays: boolean,
+      public numberOfHoursWorked: number,
+      public isPaidWork: boolean,
+      public workPermanence: DropdownOptionModel,
+      public isOnLeave: boolean,
+      public literacy: DropdownOptionModel,
+      public studentIdNumber: string,
+      public educationalLevel: DropdownOptionModel,
+      public isRegisteredInEducationalInstitute: boolean,
+      public educationalInstituteType: DropdownOptionModel,
+      // public educationalInstitute: DropdownOptionModel,
+      public publicSchoolName: string,
+      public unRegisteredReason: string,
+      public otherHealthInsurance: string,
+      public hasDisabilityCard: boolean,
+      public disabilityCardNumber: string,
+      public personDiseases: DropdownOptionModel[],
+      public healthInsuranceType: DropdownOptionModel,
+      public disability: DropdownOptionModel,
+  ) {}
+
+}
+
+export class BeEssnOldPersonModel {
+  id: number;
+  dateOfBirth?: Date | string;
+}
+
+export class EssnHousehold {
+
+  id?: number;
+  isRegisteredToLifeProgram: boolean;
+  lifeProgramApplicationNumber: string;
+  lackOfHealthServices: boolean;
+  lackOfHealthServicesReason: string;
+  incomeType: DropdownOptionModel;
+  otherIncomeType: string;
+  hasRealEstate: boolean;
+  realEstateDetails: string;
+  waterSource: DropdownOptionModel;
+  waterSourceConsistency: DropdownOptionModel;
+  toiletType: DropdownOptionModel;
+  wasteManagementType: DropdownOptionModel;
+  essnHouseholdFacilities: DropdownOptionModel[];
+  mouhafaza: DropdownOptionModel;
+  kadaa: DropdownOptionModel;
+  town: DropdownOptionModel;
+  locality: DropdownOptionModel;
+  accommodationType: DropdownOptionModel;
+  accommodationProperty: DropdownOptionModel;
+  accommodationFlooring: DropdownOptionModel;
+  accommodationArea: DropdownOptionModel;
+  roadType: DropdownOptionModel;
+  street: string;
+  otherAccommodationType: string;
+  building: string;
+  apartment: string;
+  floor: number;
+  nearestLocation: string;
+  roomsNumber: number;
+  bedroomsNumber: number;
+  bathroomsNumber: number;
+  householdIndividualsNumber: number;
+  conflictInArea: boolean;
+  distanceToClosestMarket: number;
+  longitude: string;
+  latitude: string;
+  respondantFullName: string;
+  familyRelation: DropdownOptionModel;
+  familyMembersNumber: number;
+  hasMoreThanOneFamily: boolean;
+  familiesNumber: number;
+  hasBankAccount: boolean;
+  loanSource: DropdownOptionModel;
+  otherLoanSource: string;
+  receivedHelpFromCountry: boolean;
+  receivedHelpFromCountryDetails: string;
+  receivedHelpFromNGO: boolean;
+  receivedHelpFromNGODetails: string;
+  receivedMoneyFromLocalTransfer: boolean;
+  receivedMoneyFromForeignTransfer: boolean;
+  hasMobile: boolean;
+  mobileNumber: string;
+  hasLandline: boolean;
+  landlineNumber: string;
+  canBeReachedThroughAContact: boolean;
+  contactMobileNumber: string;
+  contactType: DropdownOptionModel;
+  otherContactType: string;
+  nameOfMobileNumberHolder: string;
+  canBeCalledForFollowup: boolean;
+  essnPerson: Array&lt;BeEssnPersonModel&gt;;
+  hasVehicle: boolean;
+  essnVehicles: DropdownOptionModel[];
+  comment: string;
+}
+
+export class BeEssnFormModel {
+
+  constructor(
+    public termsApproved: boolean,
+    public infoCertified: boolean,
+    public essnApplicationStatus: DropdownOptionModel,
+    public aidCardApplicationId: DropdownOptionModel,
+    public essnHousehold: EssnHousehold,
+    public id?: number
+  ) { }
+}
+
+export class EssnLookupModel {
+
+  constructor(
+    public kadaa?: DropdownOptionModel[],
+    public mouhafaza?: DropdownOptionModel[],
+    public publicInstitutionType?: DropdownOptionModel[],
+    public publicInstitution?: DropdownOptionModel[],
+    public workPublicClass?: DropdownOptionModel[],
+    public essnApplicationStatus?: DropdownOptionModel[],
+    public auditStatus?: DropdownOptionModel[],
+    public country?: DropdownOptionModel[],
+    public locality?: DropdownOptionModel[],
+    public employmentStatus?: DropdownOptionModel[],
+    public gender?: DropdownOptionModel[],
+    public maritalStatus?: DropdownOptionModel[],
+    public town?: DropdownOptionModel[],
+    public workHours?: DropdownOptionModel[],
+    public workSector?: DropdownOptionModel[],
+    public accommodationType?: DropdownOptionModel[],
+    public currency?: DropdownOptionModel[],
+    public accommodationProperty?: DropdownOptionModel[],
+    public workCategory?: DropdownOptionModel[],
+    public familyRelation?: DropdownOptionModel[],
+    public accommodationArea?: DropdownOptionModel[],
+    public vehicleCategory?: DropdownOptionModel[],
+    public filteredKadaaOptions?: DropdownOptionModel[],
+    public filteredTownOptions?: DropdownOptionModel[],
+    public filteredLocalityOptions?: DropdownOptionModel[],
+    public externalFamilyRelation?: DropdownOptionModel[],
+    public representativeRelation?: DropdownOptionModel[]
+  ) { }
+}
+
+export class FeEssnPersonModel {
+
+  familyRelation: number;
+  idNumber: string;
+  extractRecord: string;
+  passportNumber: string;
+  registryNumber: string;
+  registryLocationText: string;
+  motherFirstName: string;
+  motherLastName: string;
+  placeOfBirth: string;
+  gender: number;
+  dateOfBirth: string;
+  maritalStatus: number;
+  firstName: string;
+  fatherName: string;
+  lastName: string;
+  firstNameEn: string;
+  fatherNameEn: string;
+  lastNameEn: string;
+  hasDisabilityCard: boolean;
+  disabilityCardNumber: string;
+  isRegisteredInEducationalInstitute: boolean;
+  educationalInstituteType: number;
+  // educationalInstitute: number;
+  publicSchoolName: string;
+  unRegisteredReason: string;
+  hasSkillOrTalent: boolean;
+  skillTalentType: number;
+  otherSkillOrTalent: string;
+  requiresAssistanceToStartBusiness: boolean;
+  hasWorkedInPastSevenDays: boolean;
+  numberOfHoursWorked: number;
+  isPaidWork: boolean;
+  workPermanence: number;
+  isOnLeave: boolean;
+  literacy: number;
+  studentIdNumber: string;
+  educationalLevel: number;
+  otherHealthInsurance: string;
+  personDiseases: number[];
+  healthInsuranceType: number;
+  disability: number;
+  person: { id: number };
+  id?: number;
+}
+
+
+export class FeEssnFormModel {
+  constructor(
+    public persons: Array&lt;FeEssnPersonModel&gt;,
+    public id?: number,
+    public essnApplicationStatusId?: number,
+    public aidCardApplicationId?: number,
+    public hasVehicle?: boolean,
+    public essnVehicles?: number[],
+    public accommodationArea?: number,
+    public accommodationFlooring?: number,
+    public accommodationProperty?: number,
+    public accommodationType?: number,
+    public apartment?: string,
+    public bathroomsNumber?: number,
+    public bedroomsNumber?: number,
+    public building?: string,
+    public conflictInArea?: boolean,
+    public distanceToClosestMarket?: number,
+    public floor?: number,
+    public gpsCoords?: { lat?: string, lon?: string },
+    public householdIndividualsNumber?: number,
+    public infoCertified?: boolean,
+    public isRegisteredToLifeProgram?: boolean,
+    public kadaa?: number,
+    public lifeProgramApplicationNumber?: string,
+    public locality?: number,
+    public mouhafaza?: number,
+    public nearestLocation?: string,
+    public otherAccommodationType?: string,
+    public roadType?: number,
+    public roomsNumber?: number,
+    public street?: string,
+    public town?: number,
+    public respondantFullName?: string,
+    public familyRelation?: number,
+    public familyMembersNumber?: number,
+    public hasMoreThanOneFamily?: boolean,
+    public essnHouseholdFacilities?: number[],
+    public incomeType?: number,
+    public otherIncomeType?: string,
+    public toiletType?: number,
+    public wasteManagementType?: number,
+    public waterSource?: number,
+    public waterSourceConsistency?: number,
+    public familiesNumber?: number,
+    public lackOfHealthServices?: boolean,
+    public lackOfHealthServicesReason?: string,
+    public hasRealEstate?: boolean,
+    public realEstateDetails?: string,
+    public hasBankAccount?: boolean,
+    public loanSource?: number,
+    public otherLoanSource?: string,
+    public receivedHelpFromCountry?: boolean,
+    public receivedHelpFromCountryDetails?: string,
+    public receivedHelpFromNGO?: boolean,
+    public receivedHelpFromNGODetails?: string,
+    public receivedMoneyFromLocalTransfer?: boolean,
+    public receivedMoneyFromForeignTransfer?: boolean,
+    public hasMobile?: boolean,
+    public mobileNumber?: string,
+    public hasLandline?: boolean,
+    public landlineNumber?: string,
+    public canBeReachedThroughAContact?: boolean,
+    public contactMobileNumber?: string,
+    public contactType?: number,
+    public otherContactType?: string,
+    public nameOfMobileNumberHolder?: string,
+    public canBeCalledForFollowup?: boolean,
+    public comment?: string
+  ) {
+
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'EssnHousehold.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

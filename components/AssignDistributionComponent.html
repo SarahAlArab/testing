@@ -1,0 +1,1232 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>wfps-web-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">wfps-web-app documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AssignDistributionComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/home/distribution/assign-distribution/assign-distribution.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>wfps-assign-distribution</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./assign-distribution.component.sass</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./assign-distribution.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_homeService" >_homeService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#_service" >_service</a>
+                            </li>
+                            <li>
+                                <a href="#applicationCountEntity" >applicationCountEntity</a>
+                            </li>
+                            <li>
+                                <a href="#cancelAction" >cancelAction</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#customFormComponent" >customFormComponent</a>
+                            </li>
+                            <li>
+                                <a href="#details" >details</a>
+                            </li>
+                            <li>
+                                <a href="#formDetails" >formDetails</a>
+                            </li>
+                            <li>
+                                <a href="#lookups" >lookups</a>
+                            </li>
+                            <li>
+                                <a href="#submitAction" >submitAction</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#translateService" >translateService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#apply" >apply</a>
+                            </li>
+                            <li>
+                                <a href="#change" >change</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getAssignableForms" >getAssignableForms</a>
+                            </li>
+                            <li>
+                                <a href="#getLookups" >getLookups</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(utilsService: <a href="../injectables/UtilsService.html" target="_self">UtilsService</a>, translateService: TranslateService, _service: <a href="../injectables/DistributionService.html" target="_self">DistributionService</a>, _homeService: <a href="../injectables/HomeService.html" target="_self">HomeService</a>, dialog: MatDialog)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>utilsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UtilsService.html" target="_self" >UtilsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DistributionService.html" target="_self" >DistributionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_homeService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/HomeService.html" target="_self" >HomeService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apply"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>apply</b></span>
+                        <a href="#apply"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>apply(event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="change"></a>
+                    <span class="name">
+                        <span ><b>change</b></span>
+                        <a href="#change"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>change(event)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAssignableForms"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getAssignableForms</b></span>
+                        <a href="#getAssignableForms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAssignableForms(type, value)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>type</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>value</td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getLookups"></a>
+                    <span class="name">
+                        <span ><b>getLookups</b></span>
+                        <a href="#getLookups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getLookups()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_homeService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_homeService</b></span>
+                        <a href="#_homeService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/HomeService.html" target="_self" >HomeService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="_service"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>_service</b></span>
+                        <a href="#_service"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/DistributionService.html" target="_self" >DistributionService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applicationCountEntity"></a>
+                    <span class="name">
+                        <span ><b>applicationCountEntity</b></span>
+                        <a href="#applicationCountEntity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelAction"></a>
+                    <span class="name">
+                        <span ><b>cancelAction</b></span>
+                        <a href="#cancelAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CustomFormActionModel.html" target="_self" >CustomFormActionModel</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new CustomFormActionModel(&#x27;&#x27;, true)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="customFormComponent"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>customFormComponent</b></span>
+                        <a href="#customFormComponent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../components/CustomFormComponent.html" target="_self" >CustomFormComponent</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(CustomFormComponent)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="details"></a>
+                    <span class="name">
+                        <span ><b>details</b></span>
+                        <a href="#details"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>DistributionDetails</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formDetails"></a>
+                    <span class="name">
+                        <span ><b>formDetails</b></span>
+                        <a href="#formDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CustomFormModel.html" target="_self" >CustomFormModel</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new CustomFormModel(this.details)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lookups"></a>
+                    <span class="name">
+                        <span ><b>lookups</b></span>
+                        <a href="#lookups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitAction"></a>
+                    <span class="name">
+                        <span ><b>submitAction</b></span>
+                        <a href="#submitAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/CustomFormActionModel.html" target="_self" >CustomFormActionModel</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new CustomFormActionModel(&#x27;home.distribution.assign&#x27;, false, false, true, true)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="translateService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>translateService</b></span>
+                        <a href="#translateService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TranslateService</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/home/distribution/assign-distribution/assign-distribution.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+import { CustomFormComponent } from &#x27;src/app/shared/components/custom-form/custom-form.component&#x27;;
+import { CustomFormActionModel, CustomFormModel } from &#x27;src/app/shared/components/custom-form/custom-form.model&#x27;;
+import { WarningDialogComponent } from &#x27;src/app/shared/components/dialogs/warning-dialog/warning-dialog.component&#x27;;
+import { DropdownOptionModel } from &#x27;src/app/shared/models/dropdown-option.model&#x27;;
+import { FieldType } from &#x27;src/app/shared/models/fields-config.model&#x27;;
+import { LookupsEnum } from &#x27;src/app/shared/models/lookups.enum&#x27;;
+import { UtilsService } from &#x27;src/app/shared/services/utils.service&#x27;;
+import { DistributionDetails } from &#x27;./assign.config&#x27;;
+import { DistributionService } from &#x27;../distribution.service&#x27;;
+import { HomeService } from &#x27;../../home.service&#x27;;
+
+@Component({
+  selector: &#x27;wfps-assign-distribution&#x27;,
+  templateUrl: &#x27;./assign-distribution.component.html&#x27;,
+  styleUrls: [&#x27;./assign-distribution.component.sass&#x27;]
+})
+export class AssignDistributionComponent implements OnInit {
+  @ViewChild(CustomFormComponent) customFormComponent?: CustomFormComponent;
+
+  submitAction: CustomFormActionModel &#x3D; new CustomFormActionModel(&#x27;home.distribution.assign&#x27;, false, false, true, true);
+  cancelAction: CustomFormActionModel &#x3D; new CustomFormActionModel(&#x27;&#x27;, true);
+  details &#x3D; DistributionDetails;
+  formDetails: CustomFormModel &#x3D; new CustomFormModel(this.details);
+  lookups: { [key: string]: DropdownOptionModel[] } &#x3D; {};
+  applicationCountEntity: { id?: number, count?: number, type?: string } &#x3D; {};
+
+  constructor(
+    private utilsService: UtilsService,
+    public translateService: TranslateService,
+    public _service: DistributionService,
+    public _homeService: HomeService,
+    private dialog: MatDialog) { }
+
+  ngOnInit(): void {
+    this.getLookups();
+  }
+
+  public apply(event) {
+    if (event.apply) {
+      this._service.assign(event.formVal).subscribe(res &#x3D;&gt; {
+        if (res &amp;&amp; res.body) {
+          let text &#x3D; &#x27;&#x27;;
+          if (res.body.applicationCount &gt; 0) {
+            text &#x3D;
+              &#x60;${this.translateService.instant(&quot;home.distribution.done1&quot;)} ${res.body.applicationCount} ${this.translateService.instant(&quot;home.distribution.done2&quot;)}&#x60;;
+          }
+          else {
+            text &#x3D; this.translateService.instant(&quot;home.distribution.done0&quot;);
+          }
+          const dialogRef &#x3D; this.dialog.open(WarningDialogComponent, {
+            width: &#x27;400px&#x27;,
+            data: { arabic: text, canClose: true }
+          });
+          dialogRef.afterClosed().subscribe(s &#x3D;&gt; {
+            this.customFormComponent.resetForm();
+            this.applicationCountEntity &#x3D; {};
+          })
+        }
+      });
+    }
+  }
+
+  change(event) {
+    if (event.field &#x3D;&#x3D; &quot;kadaa&quot; || event.field &#x3D;&#x3D; &quot;town&quot;) {
+      if (this.customFormComponent.form.controls.town.value) {
+        this.getAssignableForms(&#x27;town&#x27;, this.customFormComponent.form.controls.town.value);
+      }
+      else if (this.customFormComponent.form.controls.kadaa.value) {
+        this.getAssignableForms(&#x27;kadaa&#x27;, this.customFormComponent.form.controls.kadaa.value);
+      }
+      else {
+        const ind &#x3D; this.details.findIndex(f &#x3D;&gt; f.prop &#x3D;&#x3D;&#x3D; &#x27;applicationCount&#x27;);
+        this.details[ind].label &#x3D; &#x27;home.distribution.cases_nb&#x27;;
+      }
+    }
+  }
+
+  private getAssignableForms(type, value) {
+    if (this.applicationCountEntity.type !&#x3D; type || this.applicationCountEntity.id !&#x3D; value) {
+      this.applicationCountEntity &#x3D; { id: value, type: type };
+      this._service.getEligableApplications(type, value).subscribe(x &#x3D;&gt; {
+        if (x &amp;&amp; x.body) {
+          this.applicationCountEntity.count &#x3D; x.body.applicationCount;
+          const ind &#x3D; this.details.findIndex(f &#x3D;&gt; f.prop &#x3D;&#x3D;&#x3D; &#x27;applicationCount&#x27;);
+          this.details[ind].label &#x3D; &#x60;${this.translateService.instant(&#x27;home.distribution.cases_nb&#x27;)} (الاجمالي: ${x.body.applicationCount})&#x60;;
+        }
+      });
+    }
+  }
+
+  getLookups() {
+    let dropdownFields &#x3D; this.details.filter(f &#x3D;&gt; f.type &#x3D;&#x3D;&#x3D; FieldType.dropdown &amp;&amp; f.lookupKey !&#x3D;&#x3D; LookupsEnum.Superviors);
+    let keys &#x3D; dropdownFields.map(m &#x3D;&gt; { return m.lookupKey })
+
+    this.utilsService.getLookupsService(keys).subscribe(s &#x3D;&gt; {
+      if (s.body) {
+        keys.forEach(k &#x3D;&gt; {
+          this.lookups[k] &#x3D; s.body[k];
+        });
+      }
+      this.formDetails.lookups &#x3D; this.lookups;
+    });
+
+    this._homeService.getActiveSupervisors().subscribe(s &#x3D;&gt; {
+      if (s.body) {
+        this.lookups[LookupsEnum.Superviors] &#x3D; s.body;
+      }
+      this.formDetails.lookups &#x3D; this.lookups;
+    });
+  };
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;content-header [withBack]&#x3D;&quot;true&quot;&gt;&lt;/content-header&gt;
+&lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div class&#x3D;&quot;form_wrapper&quot;&gt;
+        &lt;p&gt;
+            {{ &#x27;home.distribution.title_assign&#x27; | translate}}
+        &lt;/p&gt;
+        &lt;div *ngIf&#x3D;&quot;formDetails.lookups&quot;&gt;
+            &lt;app-custom-form [data]&#x3D;&quot;formDetails&quot; [submitAction]&#x3D;&quot;submitAction&quot; [cancelAction]&#x3D;&quot;cancelAction&quot;
+                (actionClicked)&#x3D;&quot;apply($event)&quot; (fieldChange)&#x3D;&quot;change($event)&quot; listenToChanges&#x3D;&quot;true&quot;&gt;&lt;/app-custom-form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./assign-distribution.component.sass</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;src/assets/global-styles/abstracts/colors&#x27;
+
+.form_wrapper
+    padding-top: 30px
+    p
+     color: $app_light_black
+
+.line
+    margin-top: 3px
+    width: 100%
+    color: #707070</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><content-header [withBack]="true"></content-header><div class="container">    <div class="form_wrapper">        <p>            {{ \'home.distribution.title_assign\' | translate}}        </p>        <div *ngIf="formDetails.lookups">            <app-custom-form [data]="formDetails" [submitAction]="submitAction" [cancelAction]="cancelAction"                (actionClicked)="apply($event)" (fieldChange)="change($event)" listenToChanges="true"></app-custom-form>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'wfps-root'},{'name': 'ApplicationsListComponent', 'selector': 'wfps-applications-list'},{'name': 'ApproveLegalTermsComponent', 'selector': 'app-approve-legal-terms'},{'name': 'AssignDistributionComponent', 'selector': 'wfps-assign-distribution'},{'name': 'AssignedHouseholdsComponent', 'selector': 'wfps-assigned-households'},{'name': 'AssignmentDetailsComponent', 'selector': 'wfps-assignment-details'},{'name': 'AssignmentListComponent', 'selector': 'wfps-assignment-list'},{'name': 'AssignmentsListComponent', 'selector': 'wfps-assignments-list'},{'name': 'AssignSpotchecksComponent', 'selector': 'wfps-assign-spotchecks'},{'name': 'AuditComponent', 'selector': 'wfps-audit'},{'name': 'AuthenticationDialogComponent', 'selector': 'app-authentication-dialog'},{'name': 'BeneficiaryListComponent', 'selector': 'wfps-beneficiary-list'},{'name': 'ButtonComponent', 'selector': 'wfps-button'},{'name': 'CallCenterAdminComponent', 'selector': 'wfps-call-center-admin'},{'name': 'CallCenterOperatorComponent', 'selector': 'wfps-call-center-operator'},{'name': 'CampaignsDetailsComponent', 'selector': 'app-campaigns-details'},{'name': 'CampaignsListComponent', 'selector': 'app-campaigns-list'},{'name': 'CampaignsTemplatesListComponent', 'selector': 'app-campaigns-templates-list'},{'name': 'CampaignsWarningDialogComponent', 'selector': 'app-campaigns-warning-dialog'},{'name': 'CasesInspectionComponent', 'selector': 'wfps-cases-inspection'},{'name': 'CasesInspectionListComponent', 'selector': 'wfps-cases-inspection-list'},{'name': 'ChangeLogsComponent', 'selector': 'wfps-change-logs'},{'name': 'ChangeLogsListingComponent', 'selector': 'wfps-change-logs-listing'},{'name': 'ChangesDetailsComponent', 'selector': 'wfps-changes-details'},{'name': 'CodeVerificationDialogComponent', 'selector': 'app-code-verification-dialog'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'ConfirmComponent', 'selector': 'confirm'},{'name': 'ContentHeaderComponent', 'selector': 'content-header'},{'name': 'CorrectionsComponent', 'selector': 'wfps-corrections'},{'name': 'CustomFieldComponent', 'selector': 'app-custom-field'},{'name': 'CustomFormArrayComponent', 'selector': 'app-custom-form-array'},{'name': 'CustomFormComponent', 'selector': 'app-custom-form'},{'name': 'DataTablesComponent', 'selector': 'wfps-data-tables'},{'name': 'DatepickerComponent', 'selector': 'app-datepicker'},{'name': 'DetailsDialogComponent', 'selector': 'app-details-dialog'},{'name': 'DetailsReportComponent', 'selector': 'wfps-details-report'},{'name': 'DistributionComponent', 'selector': 'wfps-distribution'},{'name': 'ErrorDisplayComponent', 'selector': 'app-error-display'},{'name': 'EssnComponent', 'selector': 'wfps-essn'},{'name': 'ExternalDeduplicationDialogComponent', 'selector': 'app-external-deduplication-dialog'},{'name': 'ExternalProgramComponent', 'selector': 'wfps-external-program'},{'name': 'ExternalProgramGenerateComponent', 'selector': 'wfps-program-generation'},{'name': 'FilterComponent', 'selector': 'wfps-filter'},{'name': 'FooterPoweredImpactComponent', 'selector': 'app-footer-powered-impact'},{'name': 'FooterToolbarComponent', 'selector': 'app-footer-toolbar'},{'name': 'FuzzyMatchingComponent', 'selector': 'app-fuzzy-matching'},{'name': 'FuzzyMatchingDetailsComponent', 'selector': 'wfps-fuzzy-matching-details'},{'name': 'FuzzyMatchingListComponent', 'selector': 'wfps-fuzzy-matching-list'},{'name': 'GeneratedReportComponent', 'selector': 'wfps-generated-report'},{'name': 'HeaderComponent', 'selector': 'wfps-header'},{'name': 'HistoryComponent', 'selector': 'wfps-history'},{'name': 'HistoryDialogComponent', 'selector': 'wfps-history-dialog'},{'name': 'HistoryPaymentDialogComponent', 'selector': 'wfps-payment-history-dialog'},{'name': 'HistoryProcessComponent', 'selector': 'wfps-history-process'},{'name': 'HomeComponent', 'selector': 'wfps-home'},{'name': 'HouseholdReportsComponent', 'selector': 'wfps-household-reports'},{'name': 'HouseholdsComponent', 'selector': 'wfps-households'},{'name': 'InclusionExclusionComponent', 'selector': 'wfps-inclusion-exclusion'},{'name': 'InfoDialogComponent', 'selector': 'app-info-dialog'},{'name': 'InstitutionsComponent', 'selector': 'wfps-institutions'},{'name': 'LandingComponent', 'selector': 'wfps-landing'},{'name': 'LandingDistributionComponent', 'selector': 'wfps-landing-distribution'},{'name': 'LandingExternalProgramComponent', 'selector': 'wfps-landing-external-program'},{'name': 'LandingHistoryComponent', 'selector': 'wfps-landing-history'},{'name': 'LandingHouseholdsComponent', 'selector': 'wfps-landing-households'},{'name': 'ListDataTableComponent', 'selector': 'list-data-table'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MapMarkerComponent', 'selector': 'app-map-marker'},{'name': 'MigrationComponent', 'selector': 'app-migration-dialog'},{'name': 'MultiLineTextDialogComponent', 'selector': 'app-multi-line-text-dialog'},{'name': 'MultipleSelectComponent', 'selector': 'app-multiple-select'},{'name': 'PaymentComponent', 'selector': 'wfps-payment'},{'name': 'PaymentDetailsDialogComponent', 'selector': 'wfps-payment-details-dialog'},{'name': 'PaymentDialogComponent', 'selector': 'app-payment-dialog'},{'name': 'PaymentGenerationComponent', 'selector': 'wfps-payment-generation'},{'name': 'PaymentPlansComponent', 'selector': 'app-payment-plans'},{'name': 'PreviousChangesComponent', 'selector': 'wfps-previous-changes'},{'name': 'ReadOnlyDetailsDialogComponent', 'selector': 'wfps-read-only-details-dialog'},{'name': 'ReassignDistributionComponent', 'selector': 'wfps-reassign-distribution'},{'name': 'ReassignSupervisorComponent', 'selector': 'wfps-reassign-supervisor'},{'name': 'ReinitializeApplicationsComponent', 'selector': 'wfps-reinitialize-applications'},{'name': 'RemarkWrapperComponent', 'selector': 'app-remark-wrapper'},{'name': 'RescheduleApplicationsComponent', 'selector': 'wfps-reschedule-applications'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'SidenavComponent', 'selector': 'app-sidenav'},{'name': 'SignupComponent', 'selector': 'wfps-signup'},{'name': 'SingleSelectComponent', 'selector': 'app-single-select'},{'name': 'SmsGenerationComponent', 'selector': 'app-fuzzy-matching'},{'name': 'SmsGenerationListComponent', 'selector': 'wfps-sms-generation-list'},{'name': 'SponsorsComponent', 'selector': 'app-sponsors'},{'name': 'SpotcheckHistoryComponent', 'selector': 'wfps-spotcheck-history'},{'name': 'StudentDataComponent', 'selector': 'wfps-student-data'},{'name': 'SubmitButtonComponent', 'selector': 'app-submit-button'},{'name': 'SupervisorsComponent', 'selector': 'wfps-supervisors'},{'name': 'SurveyersComponent', 'selector': 'wfps-surveyers'},{'name': 'SurveysListComponent', 'selector': 'wfps-surveys-list'},{'name': 'TaskDialogComponent', 'selector': 'wfps-task-dialog'},{'name': 'TextAreaComponent', 'selector': 'app-text-area'},{'name': 'TextInputComponent', 'selector': 'app-text-input'},{'name': 'TitleComponent', 'selector': 'wfps-title'},{'name': 'ToggleButtonsComponent', 'selector': 'wfps-toggle-buttons'},{'name': 'ToolbarComponent', 'selector': 'app-toolbar'},{'name': 'ToolbarDrawerComponent', 'selector': 'app-toolbar-drawer'},{'name': 'UnassignedHouseholdsComponent', 'selector': 'wfps-unassigned-households'},{'name': 'UnscheduledSpotchecksComponent', 'selector': 'wfps-unscheduled-spotchecks'},{'name': 'UploadFieldComponent', 'selector': 'app-upload-field'},{'name': 'UploadFileDialogComponent', 'selector': 'upload-file-dialog'},{'name': 'WarningDialogComponent', 'selector': 'app-warning-dialog'}];
+    var DIRECTIVES = [{'name': 'DataTableBaseClass', 'selector': ''}];
+    var ACTUAL_COMPONENT = {'name': 'AssignDistributionComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AssignDistributionComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,369 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>wfps-web-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">wfps-web-app documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content module">
+                   <div class="content-data">
+
+
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">Modules</li>
+    <li class="breadcrumb-item" >HouseholdsRoutingModule</li>
+</ol>
+
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a href="#info" 
+            class="nav-link"
+            class="nav-link active"
+            role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li class="nav-item">
+        <a href="#source" 
+            class="nav-link"
+            
+            role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/home/households/households-routing.module.ts</code>
+        </p>
+
+
+
+
+
+        <div class="container-fluid module">
+            <div class="row">
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { CanActivatePageGuard } from &#x27;src/app/shared/guards/can-activate-page.guard&#x27;;
+import { UserModulesEnum, UserRolesActionsEnum } from &#x27;src/app/shared/models/user-role.enum&#x27;;
+import { ApplicationsListComponent } from &#x27;./applications-list/applications-list.component&#x27;;
+import { AssignedHouseholdsComponent } from &#x27;./assigned-households/assigned-households.component&#x27;;
+import { AuditComponent } from &#x27;./assigned-households/audit/audit.component&#x27;;
+import { EssnComponent } from &#x27;./assigned-households/essn/essn.component&#x27;;
+import { SurveysListComponent } from &#x27;./assigned-households/surveys-list/surveys-list.component&#x27;;
+import { CasesInspectionListComponent } from &#x27;./cases-inspection/cases-inspection-list/cases-inspection-list.component&#x27;;
+import { CasesInspectionComponent } from &#x27;./cases-inspection/cases-inspection.component&#x27;;
+import { CorrectionsComponent } from &#x27;./corrections/corrections.component&#x27;;
+import { FuzzyMatchingDetailsComponent } from &#x27;./fuzzy-matching/fuzzy-matching-details/fuzzy-matching-details.component&#x27;;
+import { FuzzyMatchingListComponent } from &#x27;./fuzzy-matching/fuzzy-matching-list/fuzzy-matching-list.component&#x27;;
+import { FuzzyMatchingComponent } from &#x27;./fuzzy-matching/fuzzy-matching.component&#x27;;
+import { HouseholdsComponent } from &#x27;./households.component&#x27;;
+import { LandingHouseholdsComponent } from &#x27;./landing-households/landing-households.component&#x27;;
+import { PaymentGenerationComponent } from &#x27;./payment-generation/payment-generation.component&#x27;;
+import { StudentDataComponent } from &#x27;./student-data/student-data.component&#x27;;
+import { HistoryProcessComponent } from &#x27;./history-process/history-process.component&#x27;;
+import { SmsGenerationListComponent } from &#x27;./sms/sms-generation-list/sms-generation-list.component&#x27;;
+import { SmsGenerationComponent } from &#x27;./sms/sms-generation.component&#x27;;
+import { CampaignsListComponent } from &#x27;./sms/campaigns/campaigns-list/campaigns-list.component&#x27;;
+import { CampaignsDetailsComponent } from &#x27;./sms/campaigns/campaigns-details/campaigns-details.component&#x27;;
+import { CampaignsTemplatesListComponent } from &#x27;./sms/campaigns-templates-list/campaigns-templates-list.component&#x27;;
+import { UnassignedHouseholdsComponent } from &#x27;./unassigned-households/unassigned-households.component&#x27;;
+import { UnscheduledSpotchecksComponent } from &#x27;./unscheduled-spotchecks/unscheduled-spotchecks.component&#x27;;
+import { PreviousChangesComponent } from &#x27;./change-logs/previous-changes/previous-changes.component&#x27;;
+import { ChangeLogsListingComponent } from &#x27;./change-logs/change-logs-listing/change-logs-listing.component&#x27;;
+import { GeneratedReportComponent } from &#x27;./generated-reports/generated-report.component&#x27;;
+import { ChangeLogsComponent } from &#x27;./change-logs/change-logs.component&#x27;;
+import { HouseholdReportsComponent } from &#x27;./household-reports/household-reports.component&#x27;;
+import { InclusionExclusionComponent } from &#x27;./inclusion-exclusion/inclusion-exclusion.component&#x27;;
+import { ReinitializeApplicationsComponent } from &#x27;./reinitialize-apps/reinitialize-applications.component&#x27;;
+import { PaymentPlansComponent } from &#x27;./payment-generation/payment-plans/payment-plans.component&#x27;;
+import { ExternalProgramComponent } from &#x27;../external-program/external-program.component&#x27;;
+import { MigrationComponent } from &#x27;./migration-dialog-component/migration-dialog.component&#x27;;
+
+const routes: Routes &#x3D; [
+  {
+    path: &#x27;&#x27;, component: HouseholdsComponent,
+    children: [
+      { path: &#x27;&#x27;, component: LandingHouseholdsComponent },
+      {
+        path: &#x27;assigned&#x27;, component: AssignedHouseholdsComponent,
+        canActivate: [CanActivatePageGuard],
+        data: {
+          pageAccess: &#x60;${UserModulesEnum.HOUSEHOLDS.module}.${UserModulesEnum.HOUSEHOLDS.key}_ASSIGNED_${UserRolesActionsEnum.LIST}&#x60;,
+          partialPageAccess: &#x60;ACCESS_APPLICATIONS&#x60;
+        },
+        children: [
+          { path: &#x27;&#x27;, component: SurveysListComponent },
+          { path: &#x27;:id/audit&#x27;, component: AuditComponent, data: { isCIData: false } },
+          { path: &#x27;:id/essn&#x27;, component: EssnComponent, data: { isCIData: false } },
+        ]
+      },
+      {
+        path: &#x27;unassigned&#x27;, component: UnassignedHouseholdsComponent,
+        canActivate: [CanActivatePageGuard],
+        data: { pageAccess: &#x60;${UserModulesEnum.HOUSEHOLDS.module}.${UserModulesEnum.HOUSEHOLDS.key}_${UserRolesActionsEnum.LIST}&#x60; }
+      },
+      {
+        path: &#x27;unscheduled-spotchecks&#x27;, component: UnscheduledSpotchecksComponent,
+        canActivate: [CanActivatePageGuard],
+        data: { pageAccess: &#x60;${UserModulesEnum.HOUSEHOLDS.module}.${UserModulesEnum.HOUSEHOLDS.key}_${UserRolesActionsEnum.LIST}&#x60; }
+      },
+      {
+        path: &#x27;fuzzy-matching&#x27;, component: FuzzyMatchingComponent,
+        children: [
+          { path: &#x27;&#x27;, component: FuzzyMatchingListComponent },
+          { path: &#x27;:id/moderate&#x27;, component: FuzzyMatchingDetailsComponent },
+        ],
+        canActivate: [CanActivatePageGuard],
+        data: { pageAccess: &#x60;${UserModulesEnum.DUPLICATE.module}.${UserModulesEnum.DUPLICATE.key}_${UserRolesActionsEnum.LIST}&#x60; }
+      },
+      {
+        path: &#x27;cases-inspection&#x27;, component: CasesInspectionComponent,
+        children: [
+          { path: &#x27;&#x27;, component: CasesInspectionListComponent },
+          { path: &#x27;:id/audit&#x27;, component: AuditComponent, data: { isCIData: true } },
+          { path: &#x27;:id/visit&#x27;, component: EssnComponent, data: { isCIData: true } }
+        ]
+      },
+      {
+        path: &#x27;change-logs&#x27;, component: ChangeLogsComponent,
+        children: [
+          { path: &#x27;&#x27;, component: ChangeLogsListingComponent },
+          { path: &#x27;:id/logs&#x27;, component: PreviousChangesComponent },
+          { path: &#x27;:id/audit&#x27;, component: AuditComponent, data: { isCIData: false } },
+          { path: &#x27;:id/essn&#x27;, component: EssnComponent, data: { isCIData: false } },
+        ],
+      },
+      {
+        path: &#x27;payments&#x27;, component: PaymentGenerationComponent,
+      },
+      {
+        path: &#x27;studentData&#x27;, component: StudentDataComponent,
+      },
+      {
+        path: &#x27;houseHoldReport&#x27;, component: HouseholdReportsComponent,
+      },
+      {
+        path: &#x27;inclusion-exclusion&#x27;, component: InclusionExclusionComponent,
+      },
+      {
+        path: &#x27;reinitialize-applications&#x27;, component: ReinitializeApplicationsComponent,
+      },
+      { path: &#x27;history-process&#x27;, component: HistoryProcessComponent },
+      { path: &#x27;generated-reports&#x27;, component: GeneratedReportComponent },
+      {
+        path: &#x27;sms&#x27;, component: SmsGenerationComponent,
+        children: [
+          { path: &#x27;&#x27;, component: SmsGenerationListComponent },
+          { path: &#x27;campaigns&#x27;, component: CampaignsListComponent },
+          { path: &#x27;campaigns/new&#x27;, component: CampaignsDetailsComponent },
+          { path: &#x27;campaigns/:id&#x27;, component: CampaignsDetailsComponent },
+          { path: &#x27;campaigns-template&#x27;, component: CampaignsTemplatesListComponent }
+        ],
+      },
+      {
+        path: &#x27;applications&#x27;, component: ApplicationsListComponent
+      },
+      {
+        path: &#x27;corrections&#x27;, component: CorrectionsComponent
+      },
+      {
+        path: &#x27;payment-plans&#x27;, component: PaymentPlansComponent
+      },
+      {
+        path: &#x27;external-program&#x27;, component: ExternalProgramComponent
+      },
+      {
+        path: &#x27;bulkAuthUnauthorization&#x27;, component: SurveysListComponent,
+        data: {
+          showBulkAuthUnauthorization: true
+        }
+      },
+      {path: &#x27;migration&#x27;, component: MigrationComponent}
+    ]
+  }];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class HouseholdsRoutingModule { }
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
+            var COMPODOC_CURRENT_PAGE_URL = 'HouseholdsRoutingModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azure Horizons Travel Collective</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="aurora"></canvas>
+  <header class="site-header">
+    <div class="brand" data-animate>
+      <span class="brand__icon">✦</span>
+      <div>
+        <p class="brand__label">Azure Horizons</p>
+        <p class="brand__tagline">Travel Collective</p>
+      </div>
+    </div>
+    <nav class="navigation" data-animate>
+      <a href="#destinations">Destinations</a>
+      <a href="#journeys">Journeys</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#stories">Stories</a>
+      <a href="#connect" class="button button--ghost">Plan a Trip</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" data-animate>
+      <div class="hero__content">
+        <span class="eyebrow">CRAFTED ESCAPES WITH SOUL</span>
+        <h1>Feel the serenity of faraway horizons and the thrill of meaningful adventures.</h1>
+        <p>Azure Horizons curates mindful travel itineraries that balance awe-inspiring sights with moments of restorative calm. Our travel designers connect you with authentic local voices, immersive experiences, and the hidden wonders that spark lifelong memories.</p>
+        <div class="hero__actions">
+          <a href="#journeys" class="button">Explore signature journeys</a>
+          <a href="#stories" class="button button--ghost">Watch traveler stories</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="floating-card" data-parallax>
+          <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=900&q=80" alt="Mountain retreat">
+          <div class="floating-card__caption">
+            <p class="caption__title">Aurora Peaks Retreat</p>
+            <p class="caption__subtitle">Norway • 8 nights</p>
+          </div>
+        </div>
+        <div class="orbit">
+          <span class="orbit__item">Wellness</span>
+          <span class="orbit__item">Culture</span>
+          <span class="orbit__item">Nature</span>
+          <span class="orbit__item">Cuisine</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="destinations" class="section section--panels">
+      <div class="section__intro" data-animate>
+        <span class="eyebrow">DESTINATIONS</span>
+        <h2>Where tranquility meets wonder.</h2>
+        <p>Every destination in our collection is chosen for its ability to soothe the senses while sparking curiosity. Discover serene coastlines, emerald mountains, and cities that pulse with art, history, and gastronomy.</p>
+      </div>
+      <div class="panels">
+        <article class="panel" data-animate>
+          <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&w=900&q=80" alt="Tropical lagoon">
+          <div class="panel__body">
+            <h3>Celestial Lagoons</h3>
+            <p>Drift across turquoise waters in the Seychelles, with starlit dinners on secluded sandbanks and gentle sunrise yoga.</p>
+          </div>
+        </article>
+        <article class="panel" data-animate>
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Kyoto forest">
+          <div class="panel__body">
+            <h3>Zen Forests of Kyoto</h3>
+            <p>Tea ceremonies in hidden machiya townhouses, moonlit bamboo walks, and calligraphy with renowned artisans.</p>
+          </div>
+        </article>
+        <article class="panel" data-animate>
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80" alt="Moroccan desert">
+          <div class="panel__body">
+            <h3>Sahara Whisper</h3>
+            <p>Traverse silent dunes by camel, sleep in luxe kasbah camps, and learn celestial navigation from Berber guides.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="journeys" class="section section--split" data-animate>
+      <div class="section__intro">
+        <span class="eyebrow">SIGNATURE JOURNEYS</span>
+        <h2>Curated itineraries that flow with rhythm and rest.</h2>
+        <p>We map every journey to your personal pace, weaving together uplifting adventures, mindful wellness rituals, and moments of spontaneous delight.</p>
+      </div>
+      <div class="journey-grid">
+        <article class="journey" data-animate>
+          <div class="journey__header">
+            <h3>Northern Lights Reverie</h3>
+            <p class="journey__duration">10 days • Iceland &amp; Faroe Islands</p>
+          </div>
+          <ul class="journey__list">
+            <li>Private glacier hike with climate researchers.</li>
+            <li>Floating spa under the stars.</li>
+            <li>Chef-led tasting of Nordic sea foraged delicacies.</li>
+          </ul>
+          <button class="button button--ghost">View sample itinerary</button>
+        </article>
+        <article class="journey" data-animate>
+          <div class="journey__header">
+            <h3>Andean Soundscapes</h3>
+            <p class="journey__duration">12 days • Peru &amp; Bolivia</p>
+          </div>
+          <ul class="journey__list">
+            <li>Sunrise meditation at Lake Titicaca.</li>
+            <li>Meet textile cooperatives preserving Incan patterns.</li>
+            <li>Stargazing ceremony guided by local shamans.</li>
+          </ul>
+          <button class="button button--ghost">View sample itinerary</button>
+        </article>
+        <article class="journey" data-animate>
+          <div class="journey__header">
+            <h3>Azure Archipelago</h3>
+            <p class="journey__duration">7 days • Greek Isles</p>
+          </div>
+          <ul class="journey__list">
+            <li>Sailing between lesser-known Cycladic gems.</li>
+            <li>Olfactory workshop exploring Aegean botanicals.</li>
+            <li>Twilight acoustic concert in an ancient amphitheater.</li>
+          </ul>
+          <button class="button button--ghost">View sample itinerary</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="experiences" class="section section--experience">
+      <div class="experience__bg" aria-hidden="true"></div>
+      <div class="section__intro" data-animate>
+        <span class="eyebrow">EXPERIENCE DESIGN</span>
+        <h2>A symphony of senses designed for profound calm.</h2>
+        <p>Our travel artisans collaborate with local creatives, naturalists, and wellness experts to orchestrate experiences that feel restorative yet alive with color.</p>
+      </div>
+      <div class="experience-grid">
+        <article class="experience" data-animate>
+          <h3>Slow Flow Rituals</h3>
+          <p>Floating hammam journeys, guided breathwork in lavender fields, and progressive muscle releases set to binaural soundscapes.</p>
+        </article>
+        <article class="experience" data-animate>
+          <h3>Creative Encounters</h3>
+          <p>Hands-on ateliers with ceramists, food anthropologists, and perfumers exploring the layers of regional identity.</p>
+        </article>
+        <article class="experience" data-animate>
+          <h3>Nature Immersions</h3>
+          <p>Bioluminescent night kayaking, mindful trekking with forest therapists, and regenerative conservation workshops.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="stories" class="section section--stories" data-animate>
+      <div class="section__intro">
+        <span class="eyebrow">TRAVELER STORIES</span>
+        <h2>Moments our travelers still dream about.</h2>
+      </div>
+      <div class="stories-carousel">
+        <article class="story" data-animate>
+          <p class="story__quote">“Every sense was engaged — from the scent of cedar forests to the resonance of mountain chants. Azure Horizons composed a journey that felt like a deep exhale.”</p>
+          <p class="story__author">— Lila, Sound Therapist</p>
+        </article>
+        <article class="story" data-animate>
+          <p class="story__quote">“They introduced us to artisans who welcomed us like family. The rhythm of the itinerary let us savor every moment without ever feeling rushed.”</p>
+          <p class="story__author">— Matteo &amp; Sol, Culinary Nomads</p>
+        </article>
+        <article class="story" data-animate>
+          <p class="story__quote">“From meditation domes to hidden jazz lounges, every day unfolded with surprise. It was transformational in the most gentle way.”</p>
+          <p class="story__author">— Priya, Architect</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="connect" class="section section--cta" data-animate>
+      <div class="cta-card">
+        <h2>Ready to design your next horizon?</h2>
+        <p>Share your travel dreams and we’ll compose a bespoke itinerary that balances serenity with soul-stirring discovery.</p>
+        <form class="cta-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+          </div>
+          <div class="form-group form-group--full">
+            <label for="dream">Describe your dream escape</label>
+            <textarea id="dream" name="dream" rows="3" placeholder="Share the mood, destinations, or experiences you’re seeking"></textarea>
+          </div>
+          <button type="submit" class="button">Request a discovery call</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-animate>
+    <div class="footer__brand">
+      <span class="brand__icon">✦</span>
+      <p>Azure Horizons Travel Collective</p>
+    </div>
+    <p class="footer__copy">Crafting immersive journeys with heart, sustainability, and harmony since 2010.</p>
+    <div class="footer__socials">
+      <a href="#">Instagram</a>
+      <a href="#">Vimeo</a>
+      <a href="#">Spotify</a>
+      <a href="#">Newsletter</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
